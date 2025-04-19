@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A simple carbon footprint calculator for construction materials based on IS standards.">
+    <meta name="keywords" content="carbon footprint, construction materials, sustainability, emissions calculator">
+    <meta name="author" content="Your Name">
+    <title>Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="calstyles.css">
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+        <header>
+            <h1>Carbon Footprint Calculator</h1>
+        </header>
+
+        <!-- Input Section -->
+        <main class="calculator-box">
+            <section id="input-section">
+                <h2>Add Materials</h2>
+
+                <label for="material">Material Type:</label>
+                <select id="material">
+                    <option value="" disabled selected>Select Material</option>
+                    <option value="Cement">Cement</option>
+                    <option value="Steel">Steel</option>
+                    <option value="Sand">Sand</option>
+                    <option value="Bricks">Bricks</option>
+                </select>
+
+                <label for="grade">Grade:</label>
+                <select id="grade" disabled>
+                    <option value="" disabled selected>Select Grade</option>
+                </select>
+
+                <label for="unit">Measurement Unit:</label>
+                <select id="unit" disabled>
+                    <option value="" disabled selected>Select Unit</option>
+                </select>
+
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" placeholder="Enter quantity" disabled>
+
+                <button id="add-material">Add Material</button>
+            </section>
+
+            <!-- Materials List -->
+            <section id="materials-list">
+                <h2>Materials Added</h2>
+                <ul id="material-items"></ul>
+            </section>
+
+            <!-- Calculation Section -->
+            <section id="calculation-section">
+                <button id="calculate">Calculate Carbon Footprint</button>
+                <div id="result"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Carbon Footprint Calculator | Sustainability First</p>
+        </footer>
+    </div>
+
+    <script src="calscript.js"></script>
+</body>
+</html>

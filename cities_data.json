@@ -1,0 +1,135 @@
+{
+  "lucknow": {
+    "basic_info": {
+      "population": "3,800,000",
+      "region": "Uttar Pradesh",
+      "area": "631 km²"
+    },
+    "emission_data": [
+      { "year": 2012, "transportation": 95, "industry": 60, "residential": 40, "others": 30 },
+      { "year": 2013, "transportation": 98, "industry": 62, "residential": 42, "others": 32 },
+      { "year": 2014, "transportation": 100, "industry": 65, "residential": 45, "others": 35 },
+      { "year": 2015, "transportation": 102, "industry": 68, "residential": 50, "others": 38 },
+      { "year": 2016, "transportation": 105, "industry": 70, "residential": 53, "others": 40 },
+      { "year": 2017, "transportation": 108, "industry": 73, "residential": 56, "others": 42 },
+      { "year": 2018, "transportation": 110, "industry": 75, "residential": 60, "others": 45 },
+      { "year": 2019, "transportation": 112, "industry": 80, "residential": 65, "others": 50 },
+      { "year": 2020, "transportation": 115, "industry": 85, "residential": 70, "others": 55 },
+      { "year": 2021, "transportation": 120, "industry": 90, "residential": 75, "others": 60 }
+    ]
+  },
+  "delhi": {
+    "basic_info": {
+      "population": "19,000,000",
+      "region": "Delhi",
+      "area": "1,484 km²"
+    },
+    "emission_data": [
+      { "year": 2012, "transportation": 250, "industry": 180, "residential": 150, "others": 100 },
+      { "year": 2013, "transportation": 260, "industry": 185, "residential": 155, "others": 110 },
+      { "year": 2014, "transportation": 270, "industry": 190, "residential": 160, "others": 115 },
+      { "year": 2015, "transportation": 280, "industry": 195, "residential": 165, "others": 120 },
+      { "year": 2016, "transportation": 290, "industry": 200, "residential": 170, "others": 125 },
+      { "year": 2017, "transportation": 300, "industry": 210, "residential": 175, "others": 130 },
+      { "year": 2018, "transportation": 310, "industry": 215, "residential": 180, "others": 135 },
+      { "year": 2019, "transportation": 320, "industry": 225, "residential": 185, "others": 140 },
+      { "year": 2020, "transportation": 330, "industry": 230, "residential": 190, "others": 145 },
+      { "year": 2021, "transportation": 340, "industry": 240, "residential": 200, "others": 150 }
+    ]
+  },
+  "mumbai": {
+    "basic_info": {
+      "population": "12,500,000",
+      "region": "Maharashtra",
+      "area": "603 km²"
+    },
+    "emission_data": [
+      { "year": 2012, "transportation": 200, "industry": 160, "residential": 140, "others": 90 },
+      { "year": 2013, "transportation": 210, "industry": 165, "residential": 145, "others": 95 },
+      { "year": 2014, "transportation": 220, "industry": 170, "residential": 150, "others": 100 },
+      { "year": 2015, "transportation": 230, "industry": 175, "residential": 155, "others": 105 },
+      { "year": 2016, "transportation": 240, "industry": 180, "residential": 160, "others": 110 },
+      { "year": 2017, "transportation": 250, "industry": 190, "residential": 165, "others": 115 },
+      { "year": 2018, "transportation": 260, "industry": 200, "residential": 170, "others": 120 },
+      { "year": 2019, "transportation": 270, "industry": 210, "residential": 175, "others": 125 },
+      { "year": 2020, "transportation": 280, "industry": 215, "residential": 180, "others": 130 },
+      { "year": 2021, "transportation": 290, "industry": 220, "residential": 190, "others": 135 }
+    ]
+  },
+  "bangalore": {
+    "basic_info": {
+      "population": "8,500,000",
+      "region": "Karnataka",
+      "area": "709 km²"
+    },
+    "emission_data": [
+      { "year": 2012, "transportation": 110, "industry": 90, "residential": 60, "others": 50 },
+      { "year": 2013, "transportation": 120, "industry": 95, "residential": 63, "others": 55 },
+      { "year": 2014, "transportation": 130, "industry": 100, "residential": 67, "others": 60 },
+      { "year": 2015, "transportation": 140, "industry": 105, "residential": 70, "others": 65 },
+      { "year": 2016, "transportation": 150, "industry": 110, "residential": 75, "others": 70 },
+      { "year": 2017, "transportation": 160, "industry": 115, "residential": 80, "others": 75 },
+      { "year": 2018, "transportation": 170, "industry": 120, "residential": 85, "others": 80 },
+      { "year": 2019, "transportation": 180, "industry": 125, "residential": 90, "others": 85 },
+      { "year": 2020, "transportation": 190, "industry": 130, "residential": 95, "others": 90 },
+      { "year": 2021, "transportation": 200, "industry": 135, "residential": 100, "others": 95 }
+    ]
+  },
+  "kolkata": {
+    "basic_info": {
+      "population": "4,500,000",
+      "region": "West Bengal",
+      "area": "185 km²"
+    },
+    "emission_data": [
+      { "year": 2012, "transportation": 85, "industry": 75, "residential": 55, "others": 45 },
+      { "year": 2013, "transportation": 90, "industry": 80, "residential": 58, "others": 48 },
+      { "year": 2014, "transportation": 95, "industry": 85, "residential": 60, "others": 50 },
+      { "year": 2015, "transportation": 100, "industry": 90, "residential": 65, "others": 53 },
+      { "year": 2016, "transportation": 105, "industry": 95, "residential": 70, "others": 55 },
+      { "year": 2017, "transportation": 110, "industry": 100, "residential": 75, "others": 58 },
+      { "year": 2018, "transportation": 115, "industry": 105, "residential": 80, "others": 60 },
+      { "year": 2019, "transportation": 120, "industry": 110, "residential": 85, "others": 63 },
+      { "year": 2020, "transportation": 125, "industry": 115, "residential": 90, "others": 65 },
+      { "year": 2021, "transportation": 130, "industry": 120, "residential": 95, "others": 68 }
+    ]
+  },
+  "chennai": {
+    "basic_info": {
+      "population": "7,100,000",
+      "region": "Tamil Nadu",
+      "area": "426 km²"
+    },
+    "emission_data": [
+      { "year": 2012, "transportation": 150, "industry": 130, "residential": 100, "others": 80 },
+      { "year": 2013, "transportation": 155, "industry": 135, "residential": 105, "others": 85 },
+      { "year": 2014, "transportation": 160, "industry": 140, "residential": 110, "others": 90 },
+      { "year": 2015, "transportation": 165, "industry": 145, "residential": 115, "others": 95 },
+      { "year": 2016, "transportation": 170, "industry": 150, "residential": 120, "others": 100 },
+      { "year": 2017, "transportation": 175, "industry": 155, "residential": 125, "others": 105 },
+      { "year": 2018, "transportation": 180, "industry": 160, "residential": 130, "others": 110 },
+      { "year": 2019, "transportation": 185, "industry": 165, "residential": 135, "others": 115 },
+      { "year": 2020, "transportation": 190, "industry": 170, "residential": 140, "others": 120 },
+      { "year": 2021, "transportation": 195, "industry": 175, "residential": 145, "others": 125 }
+    ]
+  },
+  "hyderabad": {
+    "basic_info": {
+      "population": "9,500,000",
+      "region": "Telangana",
+      "area": "650 km²"
+    },
+    "emission_data": [
+      { "year": 2012, "transportation": 130, "industry": 100, "residential": 70, "others": 60 },
+      { "year": 2013, "transportation": 140, "industry": 105, "residential": 75, "others": 65 },
+      { "year": 2014, "transportation": 150, "industry": 110, "residential": 80, "others": 70 },
+      { "year": 2015, "transportation": 160, "industry": 115, "residential": 85, "others": 75 },
+      { "year": 2016, "transportation": 170, "industry": 120, "residential": 90, "others": 80 },
+      { "year": 2017, "transportation": 180, "industry": 125, "residential": 95, "others": 85 },
+      { "year": 2018, "transportation": 190, "industry": 130, "residential": 100, "others": 90 },
+      { "year": 2019, "transportation": 200, "industry": 135, "residential": 105, "others": 95 },
+      { "year": 2020, "transportation": 210, "industry": 140, "residential": 110, "others": 100 },
+      { "year": 2021, "transportation": 220, "industry": 145, "residential": 115, "others": 105 }
+    ]
+  }
+}

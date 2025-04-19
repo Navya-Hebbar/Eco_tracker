@@ -1,0 +1,108 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Background Styling */
+body {
+    background: url('background.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: #fff;
+}
+
+header {
+    width: 100%;
+    max-width: 400px; /* Same as the form box */
+    margin: 20px auto; /* Center the header */
+    background-color: #444; /* Dark background */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Main Calculator Container */
+.calculator-box {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Form Elements */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #444;
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Button Styling */
+button {
+    background: #4b6b2f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #3a5223;
+}
+
+/* Styled Material List */
+#materials-list {
+    margin-top: 20px;
+}
+
+.material-item {
+    background: #f1f1f1;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Delete Button */
+.delete-btn {
+    background: red;
+    border: none;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Result Styling */
+.result-text {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #2e7d32;
+}
+

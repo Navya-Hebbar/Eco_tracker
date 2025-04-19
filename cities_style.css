@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    background-color: #f2f2f2;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .city-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+  
+  .city-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  
+  .city-btn:hover {
+    background-color: #388e3c;
+  }
+  
+  .city-data {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 700px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .city-data h2 {
+    margin-top: 0;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  th {
+    background-color: #e0e0e0;
+  }
+  .search-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  #searchInput {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
