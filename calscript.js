@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Select elements
     const materialDropdown = document.getElementById("material");
     const gradeDropdown = document.getElementById("grade");
     const unitDropdown = document.getElementById("unit");
@@ -8,10 +7,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const materialsList = document.getElementById("material-items");
     const calculateButton = document.getElementById("calculate");
     const resultDiv = document.getElementById("result");
+    const downloadButton = document.getElementById("download-pdf");
 
     let materials = [];
 
-    // Grade options based on material selection
     const gradeOptions = {
         "Cement": ["OPC 33", "OPC 43", "OPC 53", "PPC", "PSC"],
         "Steel": ["Fe 415", "Fe 500", "Fe 550", "Fe 600"],
@@ -20,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "Concrete": ["M15", "M20", "M25", "M30"]
     };
 
-    // Unit options based on material selection
     const unitOptions = {
         "Cement": "kg",
         "Steel": "kg",
@@ -29,15 +27,26 @@ document.addEventListener("DOMContentLoaded", () => {
         "Concrete": "m³"
     };
 
-    // Ensure the dropdown is populated on load
-    console.log("Material dropdown options:", materialDropdown.innerHTML);
+    // ⬇️ Move emission factors here so accessible in download too
+    const emissionFactors = {
+        "Cement": 0.9,
+        "Steel": 1.8,
+        "Sand": 14.0,
+        "Bricks": 0.2,
+        "Concrete": 290.0
+    };
 
-    // Update dropdowns dynamically when material is selected
+    const unitConversions = {
+        "Cement": 1,
+        "Steel": 1,
+        "Sand": 1,
+        "Bricks": 1,
+        "Concrete": 1
+    };
+
     materialDropdown.addEventListener("change", () => {
         const selectedMaterial = materialDropdown.value;
-        console.log("Material selected:", selectedMaterial);
 
-        // Update grade dropdown
         gradeDropdown.innerHTML = `<option value="" disabled selected>Select Grade</option>`;
         if (gradeOptions[selectedMaterial]) {
             gradeOptions[selectedMaterial].forEach(grade => {
@@ -51,19 +60,16 @@ document.addEventListener("DOMContentLoaded", () => {
             gradeDropdown.disabled = true;
         }
 
-        // Set unit dropdown
         unitDropdown.innerHTML = `<option value="${unitOptions[selectedMaterial]}" selected>${unitOptions[selectedMaterial]}</option>`;
         unitDropdown.disabled = false;
         quantityInput.disabled = false;
     });
 
-    // Function to update material list UI
     function updateMaterialList() {
-        materialsList.innerHTML = ""; // Clear the list before updating
-
+        materialsList.innerHTML = "";
         materials.forEach((item, index) => {
             const listItem = document.createElement("li");
-            listItem.classList.add("material-item"); // Styled list items
+            listItem.classList.add("material-item");
             listItem.innerHTML = `
                 <span>${item.material} (${item.grade}) - ${item.quantity} ${item.unit}</span>
                 <button class="delete-btn" onclick="removeMaterial(${index})">✖</button>
@@ -72,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Function to add material
     addButton.addEventListener("click", () => {
         const material = materialDropdown.value;
         const grade = gradeDropdown.value;
@@ -81,20 +86,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (material && grade && quantity > 0) {
             materials.push({ material, grade, quantity, unit });
-            updateMaterialList(); // Refresh UI
-            quantityInput.value = ""; // Clear input after adding
+            updateMaterialList();
+            quantityInput.value = "";
         } else {
             alert("Please select all fields and enter a valid quantity.");
         }
     });
 
-    // Function to remove material
     window.removeMaterial = (index) => {
         materials.splice(index, 1);
         updateMaterialList();
     };
 
-    // Function to calculate carbon footprint (Ensuring output is in kg CO₂)
     calculateButton.addEventListener("click", () => {
         if (materials.length === 0) {
             alert("Please add at least one material.");
@@ -103,28 +106,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let totalCarbon = 0;
 
-        const emissionFactors = {
-            "Cement": 0.9,    // kg CO₂ per kg
-            "Steel": 1.8,     // kg CO₂ per kg
-            "Sand": 14.0,     // kg CO₂ per m³
-            "Bricks": 0.2,    // kg CO₂ per brick
-            "Concrete": 290.0 // kg CO₂ per m³
-        };
-
-        const unitConversions = {
-            "Cement": 1,      // kg remains kg
-            "Steel": 1,       // kg remains kg
-            "Sand": 1,        // m³ remains m³
-            "Bricks": 1,      // Keeping bricks as 1-to-1 conversion
-            "Concrete": 1     // m³ remains m³
-        };
-
         materials.forEach(item => {
-            let convertedQuantity = item.quantity / unitConversions[item.material]; // Convert to base unit
+            let convertedQuantity = item.quantity / unitConversions[item.material];
             totalCarbon += convertedQuantity * emissionFactors[item.material];
         });
 
-        // Styled output
         resultDiv.innerHTML = `<h3 class="result-text">Total Carbon Footprint: <span>${totalCarbon.toFixed(2)} kg CO₂</span></h3>`;
+        downloadButton.style.display = "inline-block";
+        window.totalCarbon = totalCarbon.toFixed(2); // Store for PDF
+    });
+
+    downloadButton.addEventListener("click", () => {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        doc.setFontSize(16);
+        doc.text("Carbon Footprint Calculator Results", 20, 20);
+
+        const tableData = materials.map(item => {
+            const footprint = (item.quantity * emissionFactors[item.material]).toFixed(2);
+            return [
+                item.material,
+                item.grade,
+                item.quantity,
+                item.unit,
+                `${footprint} kg CO₂`
+            ];
+        });
+
+        const headers = ["Material", "Grade", "Quantity", "Unit", "Carbon Footprint"];
+
+        doc.autoTable({
+            head: [headers],
+            body: tableData,
+            startY: 30,
+            margin: { top: 10 },
+            styles: { fontSize: 10, cellPadding: 3 },
+            headStyles: { fillColor: [22, 160, 133] },
+            theme: 'grid'
+        });
+
+        doc.setFontSize(14);
+        doc.text(`Total Carbon Footprint: ${window.totalCarbon} kg CO₂`, 20, doc.lastAutoTable.finalY + 15);
+
+        doc.save("carbon-footprint-result.pdf");
     });
 });
